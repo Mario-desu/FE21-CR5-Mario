@@ -6,8 +6,32 @@
     a {text-decoration: none;}
 }
 
+.outer {
+    background-color: #afbcd3;
+}
 
-//adjust Image size
+//Navbar style
+
+.nav-style {
+    background-color: #7082a5;
+
+
+
+    
+}
+
+.nav-style li {
+    color: whitesmoke;
+    font-size: 1.6em;
+}
+
+
+
+
+
+
+
+//adjust Image size card
 
 .img-style {
     width: 22em;    /* or 100% of container */
@@ -15,4 +39,15 @@
     object-fit: cover; /* none can be an option too as cover may deform it*/
     object-position: 50% 50%; /* if both 50% will center it*/
 
+}
+
+//footer-styling
+
+.footer {
+
+    background-color: #7082a5 ;
+
+    li {
+        color: whitesmoke;
+    }
 }

@@ -9,6 +9,19 @@
   text-decoration: none;
 }
 
+.outer {
+  background-color: #afbcd3;
+}
+
+.nav-style {
+  background-color: #7082a5;
+}
+
+.nav-style li {
+  color: whitesmoke;
+  font-size: 1.6em;
+}
+
 .img-style {
   width: 22em;
   /* or 100% of container */
@@ -20,5 +33,13 @@
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
   /* if both 50% will center it*/
+}
+
+.footer {
+  background-color: #7082a5;
+}
+
+.footer li {
+  color: whitesmoke;
 }
 /*# sourceMappingURL=styles.css.map */
