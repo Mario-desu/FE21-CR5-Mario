@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    a {text-decoration: none;}
+}
+
+
+//adjust Image size
+
+.img-style {
+    width: 22em;    /* or 100% of container */
+    height: 100%;      /*  or 100% of container */
+    object-fit: cover; /* none can be an option too as cover may deform it*/
+    object-position: 50% 50%; /* if both 50% will center it*/
+
+}

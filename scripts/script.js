@@ -13,61 +13,61 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var carArray = [];
-var Vehicles = /** @class */ (function () {
-    function Vehicles(model, kilometers, seatNumber, fuelType, productionYear, image) {
-        this.model = model;
-        this.kilometers = kilometers;
-        this.seatNumber = seatNumber;
-        this.fuelType = fuelType;
-        this.productionYear = productionYear;
+var travelArray = [];
+var Locations = /** @class */ (function () {
+    function Locations(attraction, adress, image) {
+        this.attraction = attraction;
+        this.adress = adress;
         this.image = image;
-        carArray.push(this);
-        console.table(carArray); // no instance yet, so no output
+        travelArray.push(this);
+        console.table(travelArray); // no instance yet, so no output
     }
-    Vehicles.prototype.createHTML = function () {
-        var generator = "<div class=\"col\">\n    <div class=\"card h-100\">\n      <img src=\"" + this.image + "\" class=\"card-img-top img-fluid\" alt=\"card-image\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">" + this.model + "</h5>\n        <p class=\"card-text\">Mileage: " + this.kilometers + "</p>\n        <p class=\"card-text\">Number of seats: " + this.seatNumber + "</p>\n        <p class=\"card-text\">Type of fuel: " + this.fuelType + "</p>\n        <p class=\"card-text\">Year of production: " + this.productionYear + "</p>\n      </div>\n    </div>\n  </div>";
+    Locations.prototype.display = function () {
+        var generator = "\n        <div class=\"col\">\n         <div class=\"card h-100 shadow\">\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">" + this.attraction + "</h5>\n              <p class=\"card-text\">" + this.adress + "</p>\n            </div>\n         <img src=\"" + this.image + "\" class=\"card-img-top img-fluid img-style\" alt=\"card-image\">\n         </div>\n        </div>\n       ";
         return generator;
     };
-    return Vehicles;
+    return Locations;
 }());
-var supra = new Vehicles("Toyota Supra", 20000, 2, "gasoline", 2020, "https://cdn.pixabay.com/photo/2021/01/04/07/58/jdm-5886801_960_720.jpg");
-var f40 = new Vehicles("Ferrari F40", 80000, 2, "gasoline", 1990, "https://cdn.pixabay.com/photo/2017/02/24/05/28/model-car-2093995_960_720.jpg");
-// console.log(supra.model);
-var Motorbikes = /** @class */ (function (_super) {
-    __extends(Motorbikes, _super);
-    function Motorbikes(model, kilometers, seatNumber, fuelType, productionYear, image, cubicCapacity) {
-        var _this = _super.call(this, model, kilometers, seatNumber, fuelType, productionYear, image) || this;
-        _this.cubicCapacity = cubicCapacity;
+var reichstag = new Locations("Reichstag", "Platz der Republik 1, 11011 Berlin", "img/reichstag.jpg");
+var ddrMuseum = new Locations("DDR Museum", "Karl-Liebknecht-Str. 1, 10178 Berlin", "img/ddrmuseum.jpg");
+var Restaurant = /** @class */ (function (_super) {
+    __extends(Restaurant, _super);
+    function Restaurant(attraction, adress, phone, cuisine, website, image) {
+        var _this = _super.call(this, attraction, adress, image) || this;
+        _this.phone = phone;
+        _this.cuisine = cuisine;
+        _this.website = website;
         return _this;
     }
-    Motorbikes.prototype.createHTML = function () {
-        var generator = "<div class=\"col\">\n    <div class=\"card h-100\">\n      <img src=\"" + this.image + "\" class=\"card-img-top img-fluid\" alt=\"card-image\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">" + this.model + "</h5>\n        <p class=\"card-text\">Mileage: " + this.kilometers + "</p>\n        <p class=\"card-text\">Number of seats: " + this.seatNumber + "</p>\n        <p class=\"card-text\">Type of fuel: " + this.fuelType + "</p>\n        <p class=\"card-text\">Year of production: " + this.productionYear + "</p>\n        <p class=\"card-text\">Cubic capacity: " + this.cubicCapacity + "</p>\n      </div>\n    </div>\n  </div>";
+    Restaurant.prototype.display = function () {
+        var generator = "\n        <div class=\"col\">\n          <div class=\"card h-100 shadow\">\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">" + this.attraction + "</h5>\n              <p class=\"card-text\">" + this.adress + "</p>\n              <p class=\"card-text\">" + this.phone + "</p>\n              <p class=\"card-text\">" + this.cuisine + "</p>\n              <p class=\"card-text\">" + this.website + "</p>\n            </div>\n          <img src=\"" + this.image + "\" class=\"card-img-top img-fluid img-style\" alt=\"card-image\">\n          </div>\n        </div>\n        ";
         return generator;
     };
-    return Motorbikes;
-}(Vehicles));
-var ninja = new Motorbikes("Kawasaki Ninja", 23000, 1, "gasoline", 2015, "https://cdn.pixabay.com/photo/2016/09/02/12/44/bike-1639091_960_720.jpg", 1400);
-var hayabusa = new Motorbikes("Suzuki Hayabusa", 50000, 1, "gasoline", 2018, "https://cdn.pixabay.com/photo/2018/09/28/20/10/hayabusa-3710138_960_720.jpg", 1800);
-var Trucks = /** @class */ (function (_super) {
-    __extends(Trucks, _super);
-    function Trucks(model, kilometers, seatNumber, fuelType, productionYear, image, wheels) {
-        var _this = _super.call(this, model, kilometers, seatNumber, fuelType, productionYear, image) || this;
-        _this.wheels = wheels;
+    return Restaurant;
+}(Locations));
+var skykitchen = new Restaurant("Skykitchen", "Landsberger Allee 106, 10369 Berlin", "+49 30 4530532620", "International", "https://www.skykitchen.berlin", "img/skykitchen.jpg");
+var upperBurgerGrill = new Restaurant("Upper Burger Grill", "Rankestraße 3, 10789 Berlin", "+49 30 55221733", "American", "https://upperburgergrill.com", "img/upperburger.jpg");
+var Events = /** @class */ (function (_super) {
+    __extends(Events, _super);
+    function Events(attraction, adress, eventDate, eventTime, ticketPrice, image) {
+        var _this = _super.call(this, attraction, adress, image) || this;
+        _this.eventDate = eventDate;
+        _this.eventTime = eventTime;
+        _this.ticketPrice = ticketPrice;
         return _this;
     }
-    Trucks.prototype.createHTML = function () {
-        var generator = "<div class=\"col\">\n    <div class=\"card h-100\">\n      <img src=\"" + this.image + "\" class=\"card-img-top img-fluid\" alt=\"card-image\">\n      <div class=\"card-body\">\n        <h5 class=\"card-title\">" + this.model + "</h5>\n        <p class=\"card-text\">Mileage: " + this.kilometers + "</p>\n        <p class=\"card-text\">Number of seats: " + this.seatNumber + "</p>\n        <p class=\"card-text\">Type of fuel: " + this.fuelType + "</p>\n        <p class=\"card-text\">Year of production: " + this.productionYear + "</p>\n        <p class=\"card-text\">Number of wheels: " + this.wheels + "</p>\n      </div>\n    </div>\n  </div>";
+    Events.prototype.display = function () {
+        var generator = "\n        <div class=\"col\">\n          <div class=\"card h-100 shadow\">\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">" + this.attraction + "</h5>\n              <p class=\"card-text\">" + this.adress + "</p>\n              <p class=\"card-text\">" + this.eventDate + "</p>\n              <p class=\"card-text\">" + this.eventTime + "</p>\n              <p class=\"card-text\">" + this.ticketPrice + "</p>\n          </div>\n          <img src=\"" + this.image + "\" class=\"card-img-top img-fluid img-style\" alt=\"card-image\">\n          </div>\n        </div>        \n        ";
         return generator;
     };
-    return Trucks;
-}(Vehicles));
-var r450 = new Trucks("Scania R450", 200000, 3, "diesel", 2015, "https://cdn.pixabay.com/photo/2015/07/08/10/38/truck-835863_960_720.jpg", 8);
-var actros = new Trucks("Mercedes Actros", 350000, 3, "diesel", 2013, "https://cdn.pixabay.com/photo/2019/01/03/03/42/truck-3910170_960_720.jpg", 8);
-for (var _i = 0, carArray_1 = carArray; _i < carArray_1.length; _i++) {
-    var value = carArray_1[_i];
+    return Events;
+}(Locations));
+var evanescence = new Events("Evanescence & Within Temptation", "Velodrom,Paul-Heyse-Straße 26, 10407 Berlin", "11.09.2021", "19:00", 67.90, "img/evanescence.jpg");
+var maximoPark = new Events("Maximo Park", "Astra Kulturhaus, 	Revaler Straße 99, 10245 Berlin", "17.09.2021", "20:00", 34.30, "img/maximopark.jpg");
+for (var _i = 0, travelArray_1 = travelArray; _i < travelArray_1.length; _i++) {
+    var value = travelArray_1[_i];
     // console.log(value);
-    document.getElementById("input-cars").innerHTML += value.createHTML();
+    document.getElementById("inputContent").innerHTML += value.display();
 }
 // for (let value of carArray){
 //     // console.log(value);

@@ -1,123 +1,126 @@
 
-let carArray = [];
+let travelArray:Array<Locations> = [];
 
-class Vehicles {
-    model:string;
-    kilometers:number;
-    seatNumber:number;
-    fuelType:string;
-    productionYear:number;
+class Locations {
+    attraction:string;
+    adress:string;
     image:string;
 
-    constructor(model, kilometers, seatNumber, fuelType, productionYear, image) {
-        this.model = model;
-        this.kilometers = kilometers;
-        this.seatNumber = seatNumber;
-        this.fuelType = fuelType;
-        this.productionYear = productionYear;
+    constructor(attraction, adress, image) {
+        this.attraction = attraction;
+        this.adress = adress;
         this.image = image;
-        carArray.push(this);
-        console.table(carArray);// no instance yet, so no output
+        travelArray.push(this);
+        console.table(travelArray);// no instance yet, so no output
     }
-    createHTML() {
+    display() {
         let generator =
-        `<div class="col">
-    <div class="card h-100">
-      <img src="${this.image}" class="card-img-top img-fluid" alt="card-image">
-      <div class="card-body">
-        <h5 class="card-title">${this.model}</h5>
-        <p class="card-text">Mileage: ${this.kilometers}</p>
-        <p class="card-text">Number of seats: ${this.seatNumber}</p>
-        <p class="card-text">Type of fuel: ${this.fuelType}</p>
-        <p class="card-text">Year of production: ${this.productionYear}</p>
-      </div>
-    </div>
-  </div>`
-  return generator
+        `
+        <div class="col">
+         <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">${this.attraction}</h5>
+              <p class="card-text">${this.adress}</p>
+            </div>
+         <img src="${this.image}" class="card-img-top img-fluid img-style" alt="card-image">
+         </div>
+        </div>
+       `
+       return generator
 
     }
 
 }
 
-let supra = new Vehicles("Toyota Supra", 20000, 2, "gasoline", 2020, "https://cdn.pixabay.com/photo/2021/01/04/07/58/jdm-5886801_960_720.jpg");
-let f40 = new Vehicles("Ferrari F40", 80000, 2, "gasoline", 1990, "https://cdn.pixabay.com/photo/2017/02/24/05/28/model-car-2093995_960_720.jpg");
+let reichstag = new Locations("Reichstag", "Platz der Republik 1, 11011 Berlin", "img/reichstag.jpg");
+let ddrMuseum = new Locations("DDR Museum", "Karl-Liebknecht-Str. 1, 10178 Berlin", "img/ddrmuseum.jpg");
 
 
-// console.log(supra.model);
 
 
-class Motorbikes extends Vehicles {
-    cubicCapacity:number;
+class Restaurant extends Locations {
+    phone:string;
+    cuisine:string
+    website:string
 
-    constructor(model, kilometers, seatNumber, fuelType, productionYear, image, cubicCapacity) {
-        super(model, kilometers, seatNumber, fuelType, productionYear, image);
-        this.cubicCapacity = cubicCapacity;
+    constructor(attraction, adress, phone, cuisine, website, image) {
+        super(attraction, adress, image);
+        this.phone = phone;
+        this.cuisine = cuisine;
+        this.website = website;
     }
-    createHTML() {
+    display() {
         let generator = 
-        `<div class="col">
-    <div class="card h-100">
-      <img src="${this.image}" class="card-img-top img-fluid" alt="card-image">
-      <div class="card-body">
-        <h5 class="card-title">${this.model}</h5>
-        <p class="card-text">Mileage: ${this.kilometers}</p>
-        <p class="card-text">Number of seats: ${this.seatNumber}</p>
-        <p class="card-text">Type of fuel: ${this.fuelType}</p>
-        <p class="card-text">Year of production: ${this.productionYear}</p>
-        <p class="card-text">Cubic capacity: ${this.cubicCapacity}</p>
-      </div>
-    </div>
-  </div>`
+        `
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">${this.attraction}</h5>
+              <p class="card-text">${this.adress}</p>
+              <p class="card-text">${this.phone}</p>
+              <p class="card-text">${this.cuisine}</p>
+              <p class="card-text">${this.website}</p>
+            </div>
+          <img src="${this.image}" class="card-img-top img-fluid img-style" alt="card-image">
+          </div>
+        </div>
+        `
       return generator;
     }
 
 }
 
 
-let ninja = new Motorbikes("Kawasaki Ninja", 23000, 1, "gasoline", 2015, "https://cdn.pixabay.com/photo/2016/09/02/12/44/bike-1639091_960_720.jpg", 1400);
-let hayabusa = new Motorbikes("Suzuki Hayabusa", 50000, 1, "gasoline", 2018, "https://cdn.pixabay.com/photo/2018/09/28/20/10/hayabusa-3710138_960_720.jpg", 1800);
+let skykitchen = new Restaurant("Skykitchen", "Landsberger Allee 106, 10369 Berlin", "+49 30 4530532620", "International", "https://www.skykitchen.berlin", "img/skykitchen.jpg");
+let upperBurgerGrill = new Restaurant("Upper Burger Grill", "Rankestraße 3, 10789 Berlin", "+49 30 55221733", "American", "https://upperburgergrill.com", "img/upperburger.jpg");
 
 
 
 
-class Trucks extends Vehicles {
-    wheels:number;
+class Events extends Locations {
+    eventDate:string;
+    eventTime:string;
+    ticketPrice:number;
     
-    constructor(model, kilometers, seatNumber, fuelType, productionYear, image, wheels) {
-        super(model, kilometers, seatNumber, fuelType, productionYear, image);
-        this.wheels = wheels;
+    constructor(attraction, adress, eventDate, eventTime, ticketPrice, image) {
+        super(attraction, adress, image);
+        this.eventDate = eventDate;
+        this.eventTime = eventTime;
+        this.ticketPrice = ticketPrice;
     }
-    createHTML() {
+    display() {
         let generator =
-        `<div class="col">
-    <div class="card h-100">
-      <img src="${this.image}" class="card-img-top img-fluid" alt="card-image">
-      <div class="card-body">
-        <h5 class="card-title">${this.model}</h5>
-        <p class="card-text">Mileage: ${this.kilometers}</p>
-        <p class="card-text">Number of seats: ${this.seatNumber}</p>
-        <p class="card-text">Type of fuel: ${this.fuelType}</p>
-        <p class="card-text">Year of production: ${this.productionYear}</p>
-        <p class="card-text">Number of wheels: ${this.wheels}</p>
-      </div>
-    </div>
-  </div>`
+        `
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">${this.attraction}</h5>
+              <p class="card-text">${this.adress}</p>
+              <p class="card-text">${this.eventDate}</p>
+              <p class="card-text">${this.eventTime}</p>
+              <p class="card-text">${this.ticketPrice}</p>
+          </div>
+          <img src="${this.image}" class="card-img-top img-fluid img-style" alt="card-image">
+          </div>
+        </div>        
+        `
       return generator
     }
-
+//class img-style for scss
     
 }
 
 
-let r450 = new Trucks("Scania R450", 200000, 3, "diesel", 2015, "https://cdn.pixabay.com/photo/2015/07/08/10/38/truck-835863_960_720.jpg", 8); 
-let actros = new Trucks("Mercedes Actros", 350000, 3, "diesel", 2013, "https://cdn.pixabay.com/photo/2019/01/03/03/42/truck-3910170_960_720.jpg", 8); 
+let evanescence = new Events("Evanescence & Within Temptation", "Velodrom,Paul-Heyse-Straße 26, 10407 Berlin", "11.09.2021", "19:00", 67.90, "img/evanescence.jpg");
+let maximoPark = new Events("Maximo Park", "Astra Kulturhaus, 	Revaler Straße 99, 10245 Berlin", "17.09.2021", "20:00", 34.30, "img/maximopark.jpg");
 
 
 
-    for (let value of carArray){
+
+    for (let value of travelArray){
 
         // console.log(value);
-        document.getElementById("input-cars").innerHTML += value.createHTML();
+        document.getElementById("inputContent").innerHTML += value.display();
         
     }
 
