@@ -91,7 +91,7 @@ var iimori = new Restaurant("Iimori Ramen", "Mulackstraße 29, 10119 Berlin", "+
 for (var _a = 0, restaurantArray_1 = restaurantArray; _a < restaurantArray_1.length; _a++) {
     var value = restaurantArray_1[_a];
     // console.log(value);
-    document.getElementById("inputRestaurant").innerHTML += value.display();
+    document.getElementById("inputRestaurant").innerHTML += value.displayRestaurant();
 }
 //Ascending-Function for Restaurant-Section  
 function sortingAscendRest() {
@@ -101,7 +101,7 @@ function sortingAscendRest() {
     });
     for (var _i = 0, restaurantArray_2 = restaurantArray; _i < restaurantArray_2.length; _i++) {
         var value = restaurantArray_2[_i];
-        document.getElementById("inputRestaurant").innerHTML += value.display();
+        document.getElementById("inputRestaurant").innerHTML += value.displayRestaurant();
     }
 }
 document.getElementById("ascendingRest").addEventListener("click", sortingAscendRest);
@@ -114,7 +114,7 @@ function sortingDescendRest() {
     });
     for (var _i = 0, restaurantArray_3 = restaurantArray; _i < restaurantArray_3.length; _i++) {
         var value = restaurantArray_3[_i];
-        document.getElementById("inputRestaurant").innerHTML += value.display();
+        document.getElementById("inputRestaurant").innerHTML += value.displayRestaurant();
     }
 }
 document.getElementById("descendingRest").addEventListener("click", sortingDescendRest);
@@ -146,7 +146,7 @@ var deepPurple = new Events("Deep Purple", "Max-Schmeling-Halle - Am Falkplatz 1
 for (var _b = 0, eventsArray_1 = eventsArray; _b < eventsArray_1.length; _b++) {
     var value = eventsArray_1[_b];
     // console.log(value);
-    document.getElementById("inputEvents").innerHTML += value.display();
+    document.getElementById("inputEvents").innerHTML += value.displayEvent();
 }
 //Ascending-Function for Event-Section  
 function sortingAscendEvent() {
@@ -157,7 +157,7 @@ function sortingAscendEvent() {
     console.log(eventsArray);
     for (var _i = 0, eventsArray_2 = eventsArray; _i < eventsArray_2.length; _i++) {
         var value = eventsArray_2[_i];
-        document.getElementById("inputEvents").innerHTML += value.display();
+        document.getElementById("inputEvents").innerHTML += value.displayEvent();
     }
 }
 document.getElementById("ascendingEvent").addEventListener("click", sortingAscendEvent);
@@ -171,7 +171,7 @@ function sortingDescendEvent() {
     console.log(eventsArray);
     for (var _i = 0, eventsArray_3 = eventsArray; _i < eventsArray_3.length; _i++) {
         var value = eventsArray_3[_i];
-        document.getElementById("inputEvents").innerHTML += value.display();
+        document.getElementById("inputEvents").innerHTML += value.displayEvent();
     }
 }
 document.getElementById("descendingEvent").addEventListener("click", sortingDescendEvent);

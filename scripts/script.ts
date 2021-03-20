@@ -107,14 +107,6 @@ document.getElementById("descendingLocation").addEventListener("click", sortingD
 
 
 
-
-
-
-
-
-
-
-
 // Restaurant class: 
 
 
@@ -169,7 +161,7 @@ let iimori = new Restaurant("Iimori Ramen", "Mulackstraße 29, 10119 Berlin", "+
 for (let value of restaurantArray){
 
   // console.log(value);
-  document.getElementById("inputRestaurant").innerHTML += value.display();
+  document.getElementById("inputRestaurant").innerHTML += value.displayRestaurant();
   
 }
 
@@ -187,7 +179,7 @@ function sortingAscendRest(){
 for (let value of restaurantArray){
 
 
-  document.getElementById("inputRestaurant").innerHTML += value.display();
+  document.getElementById("inputRestaurant").innerHTML += value.displayRestaurant();
   
   }
 
@@ -215,7 +207,7 @@ function sortingDescendRest(){
 for (let value of restaurantArray){
 
 
-  document.getElementById("inputRestaurant").innerHTML += value.display();
+  document.getElementById("inputRestaurant").innerHTML += value.displayRestaurant();
   
   }
 
@@ -224,13 +216,6 @@ for (let value of restaurantArray){
 document.getElementById("descendingRest").addEventListener("click", sortingDescendRest);
 
 //--end Descend-Function Restaurant---------------   
-
-
-
-
-
-
-
 
 
 
@@ -292,7 +277,7 @@ let deepPurple = new Events("Deep Purple", "Max-Schmeling-Halle - Am Falkplatz 1
   for (let value of eventsArray){
 
     // console.log(value);
-    document.getElementById("inputEvents").innerHTML += value.display();
+    document.getElementById("inputEvents").innerHTML += value.displayEvent();
     
   }
 
@@ -315,7 +300,7 @@ console.log(eventsArray);
 for (let value of eventsArray){
 
 
-  document.getElementById("inputEvents").innerHTML += value.display();
+  document.getElementById("inputEvents").innerHTML += value.displayEvent();
   
   }
 
@@ -343,7 +328,7 @@ console.log(eventsArray);
 for (let value of eventsArray){
 
 
-  document.getElementById("inputEvents").innerHTML += value.display();
+  document.getElementById("inputEvents").innerHTML += value.displayEvent();
   
   }
 
