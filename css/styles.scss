@@ -2,18 +2,22 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 
     a {text-decoration: none;}
+    
 }
 
 .outer {
-    background-color: #afbcd3;
+    background-color: #e0eafc;
 }
 
 //Navbar style
 
 .nav-style {
     background-color: #7082a5;
+    
 
 
 
@@ -21,29 +25,46 @@
 }
 
 .nav-style li {
-    color: whitesmoke;
-    font-size: 1.6em;
+    
+    font-size: 2em;
+
+}
+
+.nav-style li:hover {
+    color: grey;
+    font-size: 1.7em;
 }
 
 
+.card:hover {
+    background-color: rgb(242, 236, 236);
+}
 
-
-
+// .main {
+//     background-image: url('https://cdn.pixabay.com/photo/2014/04/02/16/28/berlin-307382_1280.png');
+// }
 
 
 //adjust Image size card
 
 .img-style {
-    width: 22em;    /* or 100% of container */
-    height: 100%;      /*  or 100% of container */
+    width: 100%;    /* or 100% of container */
+    height: 22em;      /*  or 100% of container */
     object-fit: cover; /* none can be an option too as cover may deform it*/
     object-position: 50% 50%; /* if both 50% will center it*/
 
 }
 
+//style created
+
+.created-style {
+    font-size: 0.80em;
+
+}
+
 //footer-styling
 
-.footer {
+footer {
 
     background-color: #7082a5 ;
 
@@ -51,3 +72,33 @@
         color: whitesmoke;
     }
 }
+
+
+//------------Swiper JS-----------------------------
+
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }

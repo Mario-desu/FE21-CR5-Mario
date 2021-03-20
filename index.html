@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="css/styles.css">
     <!--Bootstrap link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Ubuntu:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+   
+
 </head>
 <body>
     <div class="container-fluid outer">
         <nav class="navbar navbar-expand-lg navbar-light nav-style">
             <!--nav-style: selector for scss-->
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="img/logo-white.png" class="img-fluid" alt="Logo"></a><!--Logo NavBar-->
+              <a class="navbar-brand" href="index.html"><img src="img/logo-white2.png" class="img-fluid" alt="Logo"></a><!--Logo NavBar-->
               <button
                 class="navbar-toggler"
                 type="button"
@@ -29,47 +33,130 @@
                 class="collapse navbar-collapse justify-content-end"
                 id="navbarNav">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="index.html">HOME</a>
+                  <li class="nav-item pe-2">
+                    <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="index.html">ABOUT</a>
+                  <li class="nav-item pe-2">
+                    <a class="nav-link text-white" href="#">About</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="contact.html">CONTACT</a><!--link to contact page-->
+                  <li class="nav-item pe-2">
+                    <a class="nav-link text-white" href="#">Contact</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 m-4 mb-5" id="inputContent">
-            <!--cards created with ts inserted here-->
+          <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="img/slides/brandenburg-slide.jpg"
+                class="d-block w-100"
+                alt="Brandenburger Tor">
+            </div>
+            <div class="carousel-item">
+              <img
+                src="img/slides/eastside-slide.jpg"
+                class="d-block w-100"
+                alt="REast Side Gallery">
+            </div>
+            <div class="carousel-item">
+              <img
+                src="img/slides/fernsehturm-slide.jpg"
+                class="d-block w-100"
+                alt="Fernsehturm">
+            </div>
+            <div class="carousel-item">
+              <img
+                src="img/slides/kaiser-wilhelm.jpg"
+                class="d-block w-100"
+                alt="Gedächtniskirche">
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-          <div class="container-fluid footer">
+
+          <!--main section-->
+          <div class="container-fluid main mt-5">
+          <p class="mt-4"><h2 class="text-center">Places</h2></p>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5 mx-4" id="inputLocations">
+            <!--cards created with ts inserted here-->
+         </div>
+         <p class="mt-4"><h2 class="text-center">Restaurants</h2></p>
+         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5 mx-4" id="inputRestaurant">
+          <!--cards created with ts inserted here-->
+        </div>
+        <p class="mt-4"><h2 class="text-center">Events</h2></p>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-4" id="inputEvents">
+          <!--cards created with ts inserted here-->
+       </div>
+        </div><!--end main--> 
+          <!--main silhoutte-img -->
+            <img src="img/skyline.png" class="img-fluid mx-auto d-block" alt="skyline">
+           
+          <footer class="container-fluid">
             <div class="container-fluid">
               <!--columns wrap when for medium size screen-->
-              <div class="row py-3">
-                <div class="col-sm-12 col-md-12 col-lg-6">
+              <div class="row pt-3">
+                <div class="col-sm-12 col-md-12 col-lg-">
                   <ul class="list-inline text-center mt-4 footer-list">
                     <!--align list in center/list inline/footer-list (SCSS)-->
                     <a href="index.html"><li class="list-inline-item fs-3 me-2">Home</li></a>
                     <a href="#"><li class="list-inline-item fs-3 me-2">About</li></a>
-                    <a href="contact.html"><li class="list-inline-item fs-3">Contact</li></a><!--link to contact page-->
+                    <a href="#"><li class="list-inline-item fs-3">Contact</li></a>
                   </ul>
                 </div>
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                  <img
-                    src="img/logo-white.png" 
-                    class="img-fluid mx-auto d-block"
-                    alt="Logo">
-                  <!--align img in the center-->
-                </div>
+
               </div>
             </div>
-          </div>
+          </footer>
 
     </div> <!--closing div outer container-->
+    <!--bootstrap script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>
+   
 </body>
 </html>

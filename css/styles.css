@@ -3,6 +3,8 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 * a {
@@ -10,7 +12,7 @@
 }
 
 .outer {
-  background-color: #afbcd3;
+  background-color: #e0eafc;
 }
 
 .nav-style {
@@ -18,14 +20,22 @@
 }
 
 .nav-style li {
-  color: whitesmoke;
-  font-size: 1.6em;
+  font-size: 2em;
+}
+
+.nav-style li:hover {
+  color: grey;
+  font-size: 1.7em;
+}
+
+.card:hover {
+  background-color: #f2ecec;
 }
 
 .img-style {
-  width: 22em;
+  width: 100%;
   /* or 100% of container */
-  height: 100%;
+  height: 22em;
   /*  or 100% of container */
   -o-object-fit: cover;
      object-fit: cover;
@@ -35,11 +45,36 @@
   /* if both 50% will center it*/
 }
 
-.footer {
+.created-style {
+  font-size: 0.80em;
+}
+
+footer {
   background-color: #7082a5;
 }
 
-.footer li {
+footer li {
   color: whitesmoke;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 /*# sourceMappingURL=styles.css.map */
