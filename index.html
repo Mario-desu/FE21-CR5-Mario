@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container-fluid outer">
-        <nav class="navbar navbar-expand-lg navbar-light nav-style">
+        <nav class="navbar navbar-expand-lg navbar-light nav-style" id="navi">
             <!--nav-style: selector for scss-->
             <div class="container-fluid">
               <a class="navbar-brand" href="index.html"><img src="img/logo-white2.png" class="img-fluid" alt="Logo"></a><!--Logo NavBar-->
@@ -37,10 +37,13 @@
                     <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item pe-2">
-                    <a class="nav-link text-white" href="#">About</a>
+                    <a class="nav-link text-white" href="#inputLocations">Places</a>
                   </li>
                   <li class="nav-item pe-2">
-                    <a class="nav-link text-white" href="#">Contact</a>
+                    <a class="nav-link text-white" href="#inputRestaurant">Restaurants</a>
+                  </li>
+                  <li class="nav-item pe-2">
+                    <a class="nav-link text-white" href="inputEvents">Events</a>
                   </li>
                 </ul>
               </div>
@@ -120,35 +123,42 @@
 
           <!--main section-->
           <div class="container-fluid main mt-5">
-          <p class="mt-4"><h2 class="text-center">Places</h2></p>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5 mx-4" id="inputLocations">
-            <!--cards created with ts inserted here-->
-         </div>
-         <p class="mt-4"><h2 class="text-center">Restaurants</h2></p>
-         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5 mx-4" id="inputRestaurant">
-          <!--cards created with ts inserted here-->
-        </div>
-        <p class="mt-4"><h2 class="text-center">Events</h2></p>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-4" id="inputEvents">
-          <!--cards created with ts inserted here-->
-       </div>
+            <p class="mt-4"><h2 class="text-center">Places</h2></p>
+            <div class="button-location mb-3 ms-3">
+              <button type="button" class="btn btn-primary" id="ascendingLocation">Ascending</button>
+              <button type="button" class="btn btn-primary" id="descendingLocation">Descending</button>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5 mx-4" id="inputLocations">
+              <!--cards Locations created with ts inserted here-->
+            </div>
+            <p class="mt-4"><h2 class="text-center">Restaurants</h2></p>
+            <div class="button-restaurant mb-3 ms-3">
+              <button type="button" class="btn btn-primary" id="ascendingRest">Ascending</button>
+              <button type="button" class="btn btn-primary" id="descendingRest">Descending</button>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5 mx-4" id="inputRestaurant">
+              <!--cards Restaurants created with ts inserted here-->
+            </div>
+            <p class="mt-4"><h2 class="text-center">Events</h2></p>
+            <div class="button-events mb-3 ms-3">
+              <button type="button" class="btn btn-primary" id="ascendingEvent">Ascending</button>
+              <button type="button" class="btn btn-primary" id="descendingEvent">Descending</button>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-4" id="inputEvents">
+            <!--cards Events created with ts inserted here-->
+            </div>
         </div><!--end main--> 
           <!--main silhoutte-img -->
-            <img src="img/skyline.png" class="img-fluid mx-auto d-block" alt="skyline">
+          <img src="img/skyline.png" class="img-fluid mx-auto d-block" alt="skyline">
            
           <footer class="container-fluid">
             <div class="container-fluid">
               <!--columns wrap when for medium size screen-->
               <div class="row pt-3">
-                <div class="col-sm-12 col-md-12 col-lg-">
-                  <ul class="list-inline text-center mt-4 footer-list">
-                    <!--align list in center/list inline/footer-list (SCSS)-->
-                    <a href="index.html"><li class="list-inline-item fs-3 me-2">Home</li></a>
-                    <a href="#"><li class="list-inline-item fs-3 me-2">About</li></a>
-                    <a href="#"><li class="list-inline-item fs-3">Contact</li></a>
-                  </ul>
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                  <p class="text-white">&copy Copyright Travellogy 2021</p>
+                  <a href="#navi"><p class="text-white text-decoration-none">&#129153 Bottom top</p></a> <!--Link to page-top-->
                 </div>
-
               </div>
             </div>
           </footer>
